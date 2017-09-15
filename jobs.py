@@ -3,6 +3,7 @@ dict={}
 file = open('occupations.csv','r')
 ugly = file.read()
 lines = ugly.split("\n")
+import random
 
 #delete unnecessary lines from csv file
 del lines[0]
@@ -16,4 +17,23 @@ for line in lines:
     else:
         dict[line.split(",")[0]]=line.split(",")[1]
 
-print(dict)
+def randoc():
+    '''
+    Prints the name of a random weighted occupation
+
+    Arg:
+    none
+
+    Ret:
+    str name of selected weighted occupation
+    '''
+    magic =random.randint(0,1000)/10.0
+    counter = 0
+    for key in dict:
+        if (counter + float(dict[key])) - magic > 0:
+            return key
+        else:
+            counter += float(dict[key])
+
+print randoc()
+
