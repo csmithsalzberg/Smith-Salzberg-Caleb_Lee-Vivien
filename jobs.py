@@ -1,3 +1,10 @@
+#Caleb Smith-Salzberg, Vivien Lee
+#Team :)
+#Softdev1 pd7
+#HW03
+#2017-09-15
+
+
 #initialize dictionary and read in csv file
 dict={}
 file = open('occupations.csv','r')
